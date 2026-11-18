@@ -84,7 +84,7 @@ library on PyPI, and not the old Make Fun launchpad on Base.
 | Open | You pick a bounty and build with your agent. |
 | Submitted | You send a public repository at one commit, plus the transcripts that built it. |
 | Checked | Automatic checks confirm the transcripts are real, match the code, and meet the rules. |
-| Scored | The grader runs every entry the same way, twice, in a sandbox. |
+| Scored | Entries are ranked by the bounty's published metric — a grader, a judge, or verified signups, depending on the bounty. |
 | Paid | The top-ranked entrants claim their reward in USDC on Solana. |
 
 Two rules of thumb: skill decides, not luck — every bounty publishes how it
@@ -148,7 +148,9 @@ card shows the reward, and each bounty page shows:
 Read the rules before you build. Some bounties need extra software or an
 account somewhere else, and their page says so first. Prefer bounties with
 many paid places over winner-take-all ones when you are starting out: more
-places means more ways to get paid.
+places means more ways to get paid. Check the entry limit and the daily
+submit quota on the bounty page too — a rejected entry still counts toward
+the day's limit, so the local check in step 5 is worth running first.
 
 ## 3. Download the kit
 
@@ -230,7 +232,8 @@ node cli/makefun.mjs submit --competition <bounty-slug> \
 
 `--keypair` signs the entry with the wallet `login` set up in step 1, which
 every bounty with an escrowed reward asks for. That wallet is where the
-reward will be paid.
+reward will be paid. The entry names one commit; later pushes do not change
+it, so note the commit hash you enter.
 
 ## 6. Read the checks, fix, resubmit
 
